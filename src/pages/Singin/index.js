@@ -13,6 +13,11 @@ export default function SingnIn(){
 
     const navigation = useNavigation();
 
+    const handleCreateAccount = () => {
+        console.log('Login button pressed');
+        navigation.navigate('Register')
+      };
+
     const handleLogin = async () => {
         setLoading(true);
         setError('');
@@ -83,7 +88,7 @@ export default function SingnIn(){
                     <Text style={style.buttomText}>{loading ? 'Carregando...' : 'Acessar'}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={style.buttomRegister}>
+                <TouchableOpacity style={style.buttomRegister} onPress={handleCreateAccount}>
                     <Text style={style.registerText}>Cadastre-se</Text>
                 </TouchableOpacity>
             </Animatable.View>
